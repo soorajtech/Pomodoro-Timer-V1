@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="timer-container">
+        <h1>Pomodoro Timer</h1>
+        <div id="status">Work Session</div>
+        <div class="timer" id="timer">25:00</div>
+        <!-- Collapsible Custom Timer Settings -->
+        <button class="collapsible" onclick="toggleCustomSettings()">Set Custom Timer</button>
+        <div class="custom-settings" id="customSettings" style="display: none;">
+            <label>Work (minutes): <input type="number" id="workInput" value="25" min="1"></label>
+            <label>Short Break (minutes): <input type="number" id="shortBreakInput" value="5" min="1"></label>
+            <label>Long Break (minutes): <input type="number" id="longBreakInput" value="15" min="1"></label>
+            <button onclick="setCustomTime()">Apply</button>
+        </div>
+        <div class="controls">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()" id="pauseButton" disabled>Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+        <div id="cycles">Pomodoros Completed: 0</div>
+    </div>
+
+        <!-- Audio alert sound -->
+        <audio id="alertSound" src="alert.mp3" preload="auto"></audio>
+    
+    <footer>
+        <p>Developed by <a href="https://soorajsk.tech" target="_blank">SOORAJ</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
